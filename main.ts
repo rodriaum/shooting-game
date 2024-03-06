@@ -33,7 +33,7 @@ basic.forever(function () {
 function end() {
     music.play(music.stringPlayable("C5 B A G F E D C ", 500), music.PlaybackMode.UntilDone)
     basic.clearScreen()
-    basic.showString("WIN", 150)
+    basic.showString(score >= range ? "WIN" : "END", 150)
     basic.clearScreen()
     started = false
     score = 0
