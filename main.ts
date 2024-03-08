@@ -39,3 +39,7 @@ function handleEnd() {
     score = 0
     range = 0
 }
+
+function hasRangeLimit() {
+    return score >= range
+}
