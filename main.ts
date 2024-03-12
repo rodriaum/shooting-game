@@ -1,10 +1,22 @@
+/**
+ * Created by Github@Rodriaum
+ * Start the system along with the variables.
+ */
+
 let score = 0
-let range = 0
+let range = 3
 
 let started = false
 
+/**
+ * Button Pressed Event
+ */
+
 input.onButtonPressed(Button.A, function() {
     if (!started) {
+        if (hasRangeLimit())
+            handleEnd()
+
         music.play(music.stringPlayable("C D E F G A B C5 ", 500), music.PlaybackMode.UntilDone)
         basic.showNumber(score)
         started = true
@@ -18,26 +30,39 @@ input.onButtonPressed(Button.B, function () {
     basic.showNumber(range)
 })
 
-basic.forever(function () {
+/**
+ * Repeaters
+ */
 
+basic.forever(function () {
     if (started && pins.digitalReadPin(DigitalPin.P1) == 1) {
         score++
         music.startMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once)
         basic.showNumber(score)
+        basic.pause(1000)
 
-        if (started && hasRangeLimit)
+        // Ao atingir o limite máximo de pontuação, o jogo termina.
+        if (started && hasRangeLimit())
             handleEnd()
     }
 })
 
+/** 
+ * Functions
+ */
+
 function handleEnd() {
-    music.play(music.stringPlayable("C5 B A G F E D C ", 500), music.PlaybackMode.UntilDone)
-    basic.clearScreen()
-    basic.showString(hasRangeLimit ? "WIN" : "END", 150)
-    basic.clearScreen()
     started = false
+    music.startMelody(
+        music.builtInMelody(hasRangeLimit() 
+        ? Melodies.Punchline 
+        : Melodies.Funeral
+        ), MelodyOptions.Once)
+    basic.clearScreen()
+    basic.showString(hasRangeLimit() ? "WIN" : "END", 150)
+    basic.clearScreen()
     score = 0
-    range = 0
+    range = 0 
 }
 
 function hasRangeLimit() {
