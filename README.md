@@ -1,5 +1,12 @@
-
 > Abrir esta página em [https://rodriaum.github.io/shooting-game/](https://rodriaum.github.io/shooting-game/)
+
+## Sobre o Projeto
+
+Um projeto MakeCode feito em JavaScript com um micro:bit, utilizado na mostra da educação e formação 2024 na área da ciência em Santo Tirso.
+
+## Como Funciona?
+
+O botão A inicia o jogo, o botão B aumenta o limite de pontos. Cada vez que o pino P1 toca no pino 3V, o jogo marca um ponto. Isso é utilizado em uma estrutura de tiro ao alvo.
 
 ## Utilizar como Extensão
 
