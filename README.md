@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 
-Um projeto MakeCode feito em JavaScript com um micro:bit, utilizado na mostra da educação e formação 2024 na área da ciência em Santo Tirso.
+Um projeto MakeCode feito em TypeScript com um micro:bit, utilizado na mostra da educação e formação 2024 na área da ciência em Santo Tirso.
 
 ## Como Funciona?
 
