@@ -12,4 +12,4 @@ Aumenta o limite máximo de pontuação, que inicialmente é 3.
 
 # Microbit
 
-https://cdn.sanity.io/images/ajwvhvgo/production/4cfb4a0c22aa25164ba6f5f9cb4ae2d53cbf35ba-2577x1068.png?w=653&q=80&fit=max&auto=format
+https://i.imgur.com/YVTfqx2.png
